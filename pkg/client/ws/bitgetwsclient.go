@@ -4,8 +4,8 @@ import (
 	"strings"
 
 	"github.com/W3Tools/bitget/constants"
-	"github.com/W3Tools/bitget/internal/common"
-	"github.com/W3Tools/bitget/internal/model"
+	"github.com/W3Tools/bitget/internalx/common"
+	"github.com/W3Tools/bitget/internalx/model"
 	"github.com/W3Tools/bitget/logging/applogger"
 )
 

@@ -1,8 +1,8 @@
 package v2
 
 import (
-	"github.com/W3Tools/bitget/internal"
-	"github.com/W3Tools/bitget/internal/common"
+	"github.com/W3Tools/bitget/internalx"
+	"github.com/W3Tools/bitget/internalx/common"
 )
 
 type SpotMarketClient struct {
@@ -15,7 +15,7 @@ func (p *SpotMarketClient) Init() *SpotMarketClient {
 }
 
 func (p *SpotMarketClient) Coins() (string, error) {
-	params := internal.NewParams()
+	params := internalx.NewParams()
 	resp, err := p.BitgetRestClient.DoGet("/api/v2/spot/public/coins", params)
 	return resp, err
 }

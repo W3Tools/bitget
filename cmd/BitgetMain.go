@@ -3,7 +3,7 @@ package main
 import (
 	"fmt"
 
-	"github.com/W3Tools/bitget/internal/model"
+	"github.com/W3Tools/bitget/internalx/model"
 	"github.com/W3Tools/bitget/pkg/client/ws"
 )
 

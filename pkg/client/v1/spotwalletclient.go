@@ -1,8 +1,8 @@
 package v1
 
 import (
-	"github.com/W3Tools/bitget/internal"
-	"github.com/W3Tools/bitget/internal/common"
+	"github.com/W3Tools/bitget/internalx"
+	"github.com/W3Tools/bitget/internalx/common"
 )
 
 type SpotWalletApi struct {
@@ -10,7 +10,7 @@ type SpotWalletApi struct {
 }
 
 func (p *SpotWalletApi) Transfer(params map[string]string) (string, error) {
-	postBody, jsonErr := internal.ToJson(params)
+	postBody, jsonErr := internalx.ToJson(params)
 	if jsonErr != nil {
 		return "", jsonErr
 	}
@@ -24,7 +24,7 @@ func (p *SpotWalletApi) DepositAddress(params map[string]string) (string, error)
 }
 
 func (p *SpotWalletApi) Withdrawal(params map[string]string) (string, error) {
-	postBody, jsonErr := internal.ToJson(params)
+	postBody, jsonErr := internalx.ToJson(params)
 	if jsonErr != nil {
 		return "", jsonErr
 	}

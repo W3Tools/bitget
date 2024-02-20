@@ -8,7 +8,7 @@ import (
 
 	"github.com/W3Tools/bitget/config"
 	"github.com/W3Tools/bitget/constants"
-	"github.com/W3Tools/bitget/internal"
+	"github.com/W3Tools/bitget/internalx"
 )
 
 type BitgetRestClient struct {
@@ -33,7 +33,7 @@ func (p *BitgetRestClient) Init() *BitgetRestClient {
 }
 
 func (p *BitgetRestClient) DoPost(uri string, params string) (string, error) {
-	timesStamp := internal.TimesStamp()
+	timesStamp := internalx.TimesStamp()
 	//body, _ := internal.BuildJsonParams(params)
 
 	sign := p.Signer.Sign(constants.POST, uri, params, timesStamp)
@@ -45,7 +45,7 @@ func (p *BitgetRestClient) DoPost(uri string, params string) (string, error) {
 	buffer := strings.NewReader(params)
 	request, err := http.NewRequest(constants.POST, requestUrl, buffer)
 
-	internal.Headers(request, p.ApiKey, timesStamp, sign, p.Passphrase)
+	internalx.Headers(request, p.ApiKey, timesStamp, sign, p.Passphrase)
 	if err != nil {
 		return "", err
 	}
@@ -67,8 +67,8 @@ func (p *BitgetRestClient) DoPost(uri string, params string) (string, error) {
 }
 
 func (p *BitgetRestClient) DoGet(uri string, params map[string]string) (string, error) {
-	timesStamp := internal.TimesStamp()
-	body := internal.BuildGetParams(params)
+	timesStamp := internalx.TimesStamp()
+	body := internalx.BuildGetParams(params)
 	//fmt.Println(body)
 
 	sign := p.Signer.Sign(constants.GET, uri, body, timesStamp)
@@ -79,7 +79,7 @@ func (p *BitgetRestClient) DoGet(uri string, params map[string]string) (string, 
 	if err != nil {
 		return "", err
 	}
-	internal.Headers(request, p.ApiKey, timesStamp, sign, p.Passphrase)
+	internalx.Headers(request, p.ApiKey, timesStamp, sign, p.Passphrase)
 
 	response, err := p.HttpClient.Do(request)
 

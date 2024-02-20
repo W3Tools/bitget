@@ -1,8 +1,8 @@
 package v1
 
 import (
-	"github.com/W3Tools/bitget/internal"
-	"github.com/W3Tools/bitget/internal/common"
+	"github.com/W3Tools/bitget/internalx"
+	"github.com/W3Tools/bitget/internalx/common"
 )
 
 type SpotAccountClient struct {
@@ -15,7 +15,7 @@ func (p *SpotAccountClient) Init() *SpotAccountClient {
 }
 
 func (p *SpotAccountClient) Info() (string, error) {
-	params := internal.NewParams()
+	params := internalx.NewParams()
 	resp, err := p.BitgetRestClient.DoGet("/api/spot/v1/account/getInfo", params)
 	return resp, err
 }

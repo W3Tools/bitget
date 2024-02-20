@@ -7,8 +7,8 @@ import (
 
 	"github.com/W3Tools/bitget/config"
 	"github.com/W3Tools/bitget/constants"
-	"github.com/W3Tools/bitget/internal"
-	"github.com/W3Tools/bitget/internal/model"
+	"github.com/W3Tools/bitget/internalx"
+	"github.com/W3Tools/bitget/internalx/model"
 	"github.com/W3Tools/bitget/logging/applogger"
 	"github.com/gorilla/websocket"
 	"github.com/robfig/cron"
@@ -65,7 +65,7 @@ func (p *BitgetBaseWsClient) ConnectWebSocket() {
 }
 
 func (p *BitgetBaseWsClient) Login() {
-	timesStamp := internal.TimesStampSec()
+	timesStamp := internalx.TimesStampSec()
 	sign := p.Signer.Sign(constants.WsAuthMethod, constants.WsAuthPath, "", timesStamp)
 	if constants.RSA == config.SignType {
 		sign = p.Signer.SignByRSA(constants.WsAuthMethod, constants.WsAuthPath, "", timesStamp)
@@ -101,7 +101,7 @@ func (p *BitgetBaseWsClient) ping() {
 }
 
 func (p *BitgetBaseWsClient) SendByType(req model.WsBaseReq) {
-	json, _ := internal.ToJson(req)
+	json, _ := internalx.ToJson(req)
 	p.Send(json)
 }
 
@@ -173,7 +173,7 @@ func (p *BitgetBaseWsClient) ReadLoop() {
 			applogger.Info("Keep connected:" + message)
 			continue
 		}
-		jsonMap := internal.JSONToMap(message)
+		jsonMap := internalx.JSONToMap(message)
 
 		v, e := jsonMap["code"]
 

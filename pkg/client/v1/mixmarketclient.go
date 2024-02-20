@@ -1,7 +1,7 @@
 package v1
 
 import (
-	"github.com/W3Tools/bitget/internal/common"
+	"github.com/W3Tools/bitget/internalx/common"
 )
 
 type MixMarketClient struct {
