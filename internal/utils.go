@@ -9,7 +9,7 @@ import (
 	"strings"
 	"time"
 
-	"github.com/W3Tools/v3-bitget-api-sdk/constants"
+	"github.com/W3Tools/bitget/constants"
 )
 
 func TimesStamp() string {

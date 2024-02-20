@@ -3,10 +3,10 @@ package ws
 import (
 	"strings"
 
-	"github.com/W3Tools/v3-bitget-api-sdk/constants"
-	"github.com/W3Tools/v3-bitget-api-sdk/internal/common"
-	"github.com/W3Tools/v3-bitget-api-sdk/internal/model"
-	"github.com/W3Tools/v3-bitget-api-sdk/logging/applogger"
+	"github.com/W3Tools/bitget/constants"
+	"github.com/W3Tools/bitget/internal/common"
+	"github.com/W3Tools/bitget/internal/model"
+	"github.com/W3Tools/bitget/logging/applogger"
 )
 
 type BitgetWsClient struct {

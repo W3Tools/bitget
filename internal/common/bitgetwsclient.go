@@ -5,11 +5,11 @@ import (
 	"sync"
 	"time"
 
-	"github.com/W3Tools/v3-bitget-api-sdk/config"
-	"github.com/W3Tools/v3-bitget-api-sdk/constants"
-	"github.com/W3Tools/v3-bitget-api-sdk/internal"
-	"github.com/W3Tools/v3-bitget-api-sdk/internal/model"
-	"github.com/W3Tools/v3-bitget-api-sdk/logging/applogger"
+	"github.com/W3Tools/bitget/config"
+	"github.com/W3Tools/bitget/constants"
+	"github.com/W3Tools/bitget/internal"
+	"github.com/W3Tools/bitget/internal/model"
+	"github.com/W3Tools/bitget/logging/applogger"
 	"github.com/gorilla/websocket"
 	"github.com/robfig/cron"
 )

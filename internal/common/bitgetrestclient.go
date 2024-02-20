@@ -6,9 +6,9 @@ import (
 	"strings"
 	"time"
 
-	"github.com/W3Tools/v3-bitget-api-sdk/config"
-	"github.com/W3Tools/v3-bitget-api-sdk/constants"
-	"github.com/W3Tools/v3-bitget-api-sdk/internal"
+	"github.com/W3Tools/bitget/config"
+	"github.com/W3Tools/bitget/constants"
+	"github.com/W3Tools/bitget/internal"
 )
 
 type BitgetRestClient struct {

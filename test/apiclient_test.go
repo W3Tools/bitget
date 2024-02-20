@@ -4,10 +4,10 @@ import (
 	"fmt"
 	"testing"
 
-	"github.com/W3Tools/v3-bitget-api-sdk/pkg/client"
-	v1 "github.com/W3Tools/v3-bitget-api-sdk/pkg/client/v1"
+	"github.com/W3Tools/bitget/pkg/client"
+	v1 "github.com/W3Tools/bitget/pkg/client/v1"
 
-	"github.com/W3Tools/v3-bitget-api-sdk/internal"
+	"github.com/W3Tools/bitget/internal"
 )
 
 func Test_PlaceOrder(t *testing.T) {

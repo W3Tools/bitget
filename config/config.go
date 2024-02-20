@@ -1,6 +1,6 @@
 package config
 
-import "github.com/W3Tools/v3-bitget-api-sdk/constants"
+import "github.com/W3Tools/bitget/constants"
 
 const (
 	BaseUrl = "https://api.bitget.com"
