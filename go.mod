@@ -1,4 +1,4 @@
-module github.com/W3Tools/v3-bitget-api-sdk
+module github.com/W3Tools/bitget
 
 go 1.17
 
